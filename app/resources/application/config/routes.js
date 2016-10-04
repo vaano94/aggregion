@@ -26,8 +26,6 @@ angular
                         getBook: function (apiService, $stateParams) {
                             return apiService.getById($stateParams.bookId).get()
                                 .$promise.then(function (book) {
-                                    console.log('book');
-                                    console.log(book);
                                     return book;
                                 })
                         },
@@ -40,6 +38,7 @@ angular
                         getBundles: function (apiService, $stateParams) {
                             return apiService.getBundles($stateParams.bookId).get()
                                 .$promise.then(function (bundles) {
+                                    console.log(bundles);
                                     return bundles;
                                 })
                         }

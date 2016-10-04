@@ -15,7 +15,8 @@
           </md-list>
           <md-list class="bundlesList" layout="row">
             <md-list-item ng-repeat="bundle in detailCtrl.bundles">
-                <md-button ng-href="{{bundle.loadBundle(bundle.id)}}" 
+                <md-button  
+                           ng-href="https://storage.aggregion.com/api/files/{{bundle.resourceId}}/shared/data"
                            class="md-raised download_btn"
                            target="_blank">
                   Download
