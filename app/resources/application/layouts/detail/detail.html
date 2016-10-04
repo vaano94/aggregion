@@ -1,0 +1,36 @@
+<section layout-align="center center" layout="column">
+
+<div>
+  <md-whiteframe class="md-whiteframe-4dp mainInfo hvr-glow" layout="column">
+
+      <div class="detail_main" layout>
+        <cover class="cover" book-id="{{detailCtrl.book.cover}}" book-title="{{detailCtrl.book.title.default}}"></cover>
+        <div class="info">
+          <h2>{{detail.bookInfo.title.default}}</h2>
+          <md-list>
+            <md-list-item ng-repeat="(optionName, option) in detailCtrl.book.options">
+              {{optionName + " : " + option}}
+              <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+          </md-list>
+          <md-list class="bundlesList" layout="row">
+            <md-list-item ng-repeat="bundle in detailCtrl.bundles">
+                <md-button ng-href="{{bundle.loadBundle(bundle.id)}}" 
+                           class="md-raised download_btn"
+                           target="_blank">
+                  Download
+                </md-button>
+            </md-list-item>
+          </md-list>
+        </div>
+      </div>
+      <md-content flex layout-padding class="description">
+        <h3>Description</h3>
+        {{detailCtrl.book.description.default}}
+      </md-content>
+    </md-whiteframe>
+
+
+</div>
+
+</section>
